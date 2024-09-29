@@ -3,8 +3,7 @@
 Roll No: 2347155  
 Christ University, Bangalore  
 
-![Akasa Banner](https://yourimageurl.com/banner.png) <!-- Add a relevant banner image here -->
-
+Deployed : https://akasafood.vercel.app/
 ---
 
 ## **Introduction**

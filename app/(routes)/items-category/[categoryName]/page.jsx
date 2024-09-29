@@ -1,21 +1,32 @@
 import GlobalApi from '@/app/_utils/GlobalApi';
 import React from 'react';
-import TopCat from '../_components/TopCat'; // Capitalized component
+import TopCat from '../_components/TopCat';
 import ItemsList from '@/app/_components/ItemsList';
 
 async function ItemCategory({ params }) {
-    const { categoryName } = params; // Destructure params to get categoryName
+    const { categoryName } = params;
 
-    // Fetch data and handle errors
+    // Initializing state variables for data
     let itemList = [];
     let categoryList = [];
+    let errorOccurred = false; // Flag for tracking errors
 
     try {
-        itemList = await GlobalApi.itemsByCat(categoryName); // Fetch items by category
-        categoryList = await GlobalApi.getCategoryList(); // Fetch category list
+        // Fetch data
+        itemList = await GlobalApi.itemsByCat(categoryName);
+        categoryList = await GlobalApi.getCategoryList();
     } catch (error) {
         console.error('Error fetching data:', error);
-        // Handle error accordingly, maybe show a message to the user
+        errorOccurred = true;
+    }
+
+    // Render error message if data fetch fails
+    if (errorOccurred) {
+        return (
+            <div className='text-center text-red-500'>
+                <p>There was an error fetching the data. Please try again later.</p>
+            </div>
+        );
     }
 
     return (
@@ -24,11 +35,16 @@ async function ItemCategory({ params }) {
                 {categoryName}
             </h2>
 
-            {/* Corrected prop name: selectedCategory */}
-            <TopCat categoryList={categoryList} selectedCategory={categoryName} /> 
-            
+            {/* Pass the correct prop selectedCategory */}
+            <TopCat categoryList={categoryList} selectedCategory={categoryName} />
+
             <div className='p-5 md:p-10'>
-                <ItemsList itemList={itemList} />
+                {/* Render a message if no items are found */}
+                {itemList.length > 0 ? (
+                    <ItemsList itemList={itemList} />
+                ) : (
+                    <p className='text-center text-slate-400'>No items found for this category.</p>
+                )}
             </div>
         </div>
     );

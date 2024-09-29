@@ -1,4 +1,4 @@
-import Items from './Items'; // Ensure correct import
+import Items from './Items'; // Import Items component correctly
 
 function ItemsList({ itemList }) {
     return (
@@ -7,10 +7,10 @@ function ItemsList({ itemList }) {
                 Sky-High Eats to Fuel Your Journey!
             </h2>
             <div className='p-8 grid grid-cols-2 
-                md:grid-cols-3 lg:grid-cols-4 gap-5'>
-                {/* Slice the itemList to limit to 8 items */}
-                {itemList.slice(0, 8).map((items) => (
-                    <Items key={items.id} items={items} /> // Ensure unique key prop
+                md:grid-cols-3 lg:grid-cols-4
+                gap-5'>
+                {itemList.map((items, index) => index<8&& (
+                    <Items key={items.id} items={items} /> // Ensure a unique key prop
                 ))}
             </div>
         </div>

@@ -1,4 +1,4 @@
-import Items from './Items'; // Import Items component correctly
+import Items from './Items'; // Import Items component
 
 function ItemsList({ itemList }) {
     return (
@@ -8,12 +8,11 @@ function ItemsList({ itemList }) {
             </h2>
             <div 
                 className='p-8 grid grid-cols-2 
-                md:grid-cols-3 lg:grid-cols-4
-                gap-5'
+                md:grid-cols-3 lg:grid-cols-4 gap-5'
                 role="grid" // Accessibility improvement
             >
-                {itemList.slice(0, 8).map((items) => (
-                    <Items key={items.id} items={items} /> // Ensure a unique key prop
+                {itemList.slice(0, 8).map((item) => (
+                    <Items key={item.id} item={item} /> // Ensure a unique key prop
                 ))}
             </div>
         </div>

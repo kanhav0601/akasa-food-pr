@@ -3,6 +3,7 @@ import axios from 'axios';
 const axiosClient = axios.create({
     baseURL: 'https://akasa-ad.onrender.com/api', // Base URL for the API
 });
+
 // API function to get categories
 const getCategory = () => axiosClient.get('/categories?populate=*');
 

@@ -3,13 +3,16 @@
 Roll No: 2347155  
 Christ University, Bangalore  
 
----
-Deployed : https://akasafood.vercel.app/
+
 ---
 
 ## **Introduction**
 
 **Akasa** is a dynamic and responsive food-ordering web application designed to deliver a seamless user experience. Built using a modern technology stack, Akasa offers high performance, scalability, and ease of content management.
+---
+Deployed : https://akasafood.vercel.app/
+Backend : https://akasa-ad.onrender.com/
+---
 
 ### **Tech Stack**
 - **Next.js**: React-based framework for server-side rendering and static site generation, improving SEO and performance.

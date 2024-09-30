@@ -11,8 +11,17 @@ function ItemsList({ itemList }) {
                 md:grid-cols-3 lg:grid-cols-4 gap-5'
                 role="grid" // Accessibility improvement
             >
-                {itemList.slice(0, 8).map((item) => (
-                    <Items key={item.id} item={item} /> // Ensure a unique key prop
+                {itemList.slice(0, 8).map((item, index) => (
+                    <div key={item.id || index} className="item-card">
+                        {/* Image rendering using environment variable */}
+                        <img 
+                            src={`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}${item?.images?.[0]?.url || '/default-image.jpg'}`} 
+                            alt={item.name} 
+                            className="w-full h-48 object-cover"
+                        />
+                        <h3 className='text-lg font-bold mt-2'>{item.name}</h3>
+                        {/* Additional item details can be added here */}
+                    </div>
                 ))}
             </div>
         </div>

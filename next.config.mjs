@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode:false,
     images:{
-        domains:['https://akasa-ad.onrender.com']
+        domains:['akasa-ad.onrender.com']
     }
 };
 

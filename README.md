@@ -8,7 +8,7 @@ Christ University, Bangalore
 
 ## **Introduction**
 
-**Akasa** is a dynamic and responsive food-ordering web application designed to deliver a seamless user experience. Built using a modern technology stack, Akasa offers high performance, scalability, and ease of content management.
+**Akasa** is a dynamic and responsive food-ordering web application designed to deliver a seamless user experience. Built using a modern technology stack, Akasa offers high performance, scalability, and ease of content management. 
 ---
 Deployed : https://akasafood.vercel.app/
 Backend : https://akasa-ad.onrender.com/
